@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using WeHelpDB.Context;
@@ -28,9 +29,32 @@ namespace WeHelpDB.Repositories.Abstract
             return DbSet;
         }
 
-        public virtual IQueryable<TEntity> Get(Func<TEntity, bool> predicate)
+        public virtual IQueryable<TEntity> Get(
+            Expression<Func<TEntity, bool>> filter = null,
+            Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
+            string includeProperties = "")
         {
-            return GetAll().Where(predicate).AsQueryable();
+            IQueryable<TEntity> query = DbSet;
+
+            if (filter != null)
+            {
+                query = query.Where(filter);
+            }
+
+            foreach (var includeProperty in includeProperties.Split
+                (new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+            {
+                query = query.Include(includeProperty);
+            }
+
+            if (orderBy != null)
+            {
+                return orderBy(query).AsQueryable();
+            }
+            else
+            {
+                return query.AsQueryable();
+            }
         }
 
         public virtual TEntity Find(params object[] key)
