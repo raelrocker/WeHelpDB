@@ -90,19 +90,21 @@ namespace WeHelpDB.Repositories.Abstract
 
         public virtual void Delete(Func<TEntity, bool> predicate)
         {
-            DbSet
-                .Where(predicate).ToList()
-                .ForEach(del => context.Set<TEntity>().Remove(del));
+            var del = DbSet.Where(predicate).ToList();
+            del.ForEach(d => DbSet.Remove(d));
         }
 
         public virtual void Delete(TEntity obj)
         {
+            /*
             var entry = context.Entry(obj);
             if (entry.State == EntityState.Detached)
             {
                 DbSet.Attach(obj);
             }
             context.Entry(obj).State = EntityState.Deleted;
+            */
+            DbSet.Remove(obj);
         }
 
         #endregion
