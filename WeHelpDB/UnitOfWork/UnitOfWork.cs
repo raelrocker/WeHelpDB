@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WeHelpDB.Context;
+using WeHelpDB.Repositories.Classes;
 
 namespace WeHelpDB.UnitOfWork
 {
@@ -11,9 +12,20 @@ namespace WeHelpDB.UnitOfWork
     {
         #region Properties
         private WeHelpContext weHelpContext;
+        private UserRepository userRepository;
         #endregion
 
         #region Repositories
+        public UserRepository UserRepository {
+            get
+            {
+                if (userRepository == null)
+                {
+                    userRepository = new UserRepository(this.weHelpContext);
+                }
+                return userRepository;
+            }
+        }
         #endregion
 
         #region Construtor
