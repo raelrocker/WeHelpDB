@@ -10,5 +10,9 @@ namespace WeHelpDB.Entities
     {
         public int CategoryId { get; set; }
         public string Description { get; set; }
+
+        #region Relationships
+        public ICollection<Event> Events { get; set; }
+        #endregion
     }
 }

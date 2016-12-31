@@ -14,10 +14,10 @@ namespace WeHelpDB.Entities
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
 
-        #region Relations
+        #region Relationships
         public virtual Person Person { get; set; }
         public virtual Ong Ong { get; set; }
-
+        public virtual ICollection<Event> CreatedEvents { get; set; }
         #endregion
     }
 }

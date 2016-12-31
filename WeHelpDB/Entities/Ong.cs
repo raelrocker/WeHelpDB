@@ -8,18 +8,18 @@ namespace WeHelpDB.Entities
 {
     public class Ong
     {
+        #region Constructor
+        public Ong()
+        {
+            Address = new Address();
+        }
+        #endregion
+
         public int UserId { get; set; }
         public string Name { get; set; }
         public string Cnpj { get; set; }
         public byte[] Photo { get; set; }
-        public string Street { get; set; }
-        public string Complement { get; set; }
-        public int? Number { get; set; }
-        public string Zip { get; set; }
-        public string City { get; set; }
-        public string State { get; set; }
-        public decimal Lat { get; set; }
-        public decimal Lng { get; set; }
+        public Address Address { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
 

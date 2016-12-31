@@ -53,12 +53,17 @@
   <ItemGroup>
     <Compile Include="Context\WeHelpContext.cs" />
     <Compile Include="Context\Initializer.cs" />
+    <Compile Include="Entities\Address.cs" />
     <Compile Include="Entities\Category.cs" />
+    <Compile Include="Entities\Event.cs" />
     <Compile Include="Entities\Ong.cs" />
     <Compile Include="Entities\Person.cs" />
     <Compile Include="Entities\User.cs" />
+    <Compile Include="Enums\EventStatus.cs" />
     <Compile Include="Extensions\MappingExtensions.cs" />
+    <Compile Include="Mapping\Classes\AddressMapping.cs" />
     <Compile Include="Mapping\Classes\CategoryMapping.cs" />
+    <Compile Include="Mapping\Classes\EventMapping.cs" />
     <Compile Include="Mapping\Classes\OngMapping.cs" />
     <Compile Include="Mapping\Classes\PersonMapping.cs" />
     <Compile Include="Mapping\Classes\UserMapping.cs" />
@@ -71,10 +76,23 @@
     <Compile Include="Migrations\201612310242404_CategoryTable.Designer.cs">
       <DependentUpon>201612310242404_CategoryTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612310417586_EventTable.cs" />
+    <Compile Include="Migrations\201612310417586_EventTable.Designer.cs">
+      <DependentUpon>201612310417586_EventTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612310654531_AddressCorrection.cs" />
+    <Compile Include="Migrations\201612310654531_AddressCorrection.Designer.cs">
+      <DependentUpon>201612310654531_AddressCorrection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612310702066_StatusEventFix.cs" />
+    <Compile Include="Migrations\201612310702066_StatusEventFix.Designer.cs">
+      <DependentUpon>201612310702066_StatusEventFix.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Abstract\Repository.cs" />
     <Compile Include="Repositories\Classes\CategoryRepository.cs" />
+    <Compile Include="Repositories\Classes\EventRepository.cs" />
     <Compile Include="Repositories\Classes\UserRepository.cs" />
     <Compile Include="Repositories\Interfaces\IRepository.cs" />
     <Compile Include="UnitOfWork\UnitOfWork.cs" />
@@ -89,6 +107,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612310242404_CategoryTable.resx">
       <DependentUpon>201612310242404_CategoryTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612310417586_EventTable.resx">
+      <DependentUpon>201612310417586_EventTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612310654531_AddressCorrection.resx">
+      <DependentUpon>201612310654531_AddressCorrection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612310702066_StatusEventFix.resx">
+      <DependentUpon>201612310702066_StatusEventFix.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

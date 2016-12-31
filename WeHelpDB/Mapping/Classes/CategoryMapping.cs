@@ -17,6 +17,7 @@ namespace WeHelpDB.Mapping.Classes
             HasKey(p => p.CategoryId);
             Property(p => p.CategoryId).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(p => p.Description).HasMaxLength(20);
+            HasMany(p => p.Events).WithRequired(p => p.Category);
         }
     }
 }

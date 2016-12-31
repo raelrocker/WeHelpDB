@@ -13,6 +13,8 @@ namespace WeHelpDB.UnitOfWork
         #region Properties
         private WeHelpContext weHelpContext;
         private UserRepository userRepository;
+        private CategoryRepository categoryRepository;
+        private EventRepository eventRepository;
         #endregion
 
         #region Repositories
@@ -24,6 +26,30 @@ namespace WeHelpDB.UnitOfWork
                     userRepository = new UserRepository(this.weHelpContext);
                 }
                 return userRepository;
+            }
+        }
+
+        public CategoryRepository CategoryRepository
+        {
+            get
+            {
+                if (categoryRepository == null)
+                {
+                    categoryRepository = new CategoryRepository(this.weHelpContext);
+                }
+                return categoryRepository;
+            }
+        }
+
+        public EventRepository EventRepository
+        {
+            get
+            {
+                if (eventRepository == null)
+                {
+                    eventRepository = new EventRepository(this.weHelpContext);
+                }
+                return eventRepository;
             }
         }
         #endregion

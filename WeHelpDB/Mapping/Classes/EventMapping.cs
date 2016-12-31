@@ -10,17 +10,19 @@ using WeHelpDB.Mapping.Interfaces;
 
 namespace WeHelpDB.Mapping.Classes
 {
-    public class OngMapping : EntityTypeConfiguration<Ong>, IMapping
+    public class EventMapping : EntityTypeConfiguration<Event>, IMapping
     {
-        public OngMapping()
+        public EventMapping()
         {
-            ToTable("Ongs");
-            HasKey(p => p.UserId);
+            HasKey(p => p.EventId);
+            Property(p => p.EventId).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(p => p.Name).HasMaxLength(50).IsRequired();
-            Property(p => p.Cnpj).HasMaxLength(18).IsRequired();
+            Property(p => p.Description).HasMaxLength(300).IsRequired();
+            Property(p => p.StartDate).IsRequired();
+            Property(p => p.FinishDate).IsOptional();
+            Property(p => p.EventStatus).IsRequired().IsFixedLength().HasMaxLength(1);
             Property(p => p.CreatedAt).IsRequired();
             Property(p => p.UpdatedAt).IsRequired();
-            
         }
     }
 }

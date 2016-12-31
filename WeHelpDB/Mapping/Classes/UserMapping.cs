@@ -24,6 +24,7 @@ namespace WeHelpDB.Mapping.Classes
             Property(p => p.UpdatedAt).IsRequired();
             HasOptional(p => p.Person).WithRequired(p => p.User).WillCascadeOnDelete();
             HasOptional(p => p.Ong).WithRequired(p => p.User).WillCascadeOnDelete();
+            HasMany(p => p.CreatedEvents).WithRequired(p => p.User).WillCascadeOnDelete();
         }
     }
 }
