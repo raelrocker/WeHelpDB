@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WeHelpDB.Entities
 {
@@ -15,6 +11,7 @@ namespace WeHelpDB.Entities
         }
         #endregion
 
+        #region Properties
         public int UserId { get; set; }
         public string Name { get; set; }
         public string Cnpj { get; set; }
@@ -22,8 +19,9 @@ namespace WeHelpDB.Entities
         public Address Address { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
+        #endregion
 
-        #region Relations
+        #region Relationships
         public virtual User User { get; set; }
         #endregion
     }

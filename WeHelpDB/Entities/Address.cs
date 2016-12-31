@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WeHelpDB.Entities
+﻿namespace WeHelpDB.Entities
 {
+    /// <summary>
+    /// Complex Type Address
+    /// </summary>
     public class Address
     {
+        #region Properties
         public string Street { get; set; }
         public string Complement { get; set; }
         public int? Number { get; set; }
@@ -16,5 +14,6 @@ namespace WeHelpDB.Entities
         public string State { get; set; }
         public decimal Lat { get; set; }
         public decimal Lng { get; set; }
+        #endregion
     }
 }

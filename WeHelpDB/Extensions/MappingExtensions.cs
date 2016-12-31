@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace WeHelpDB.Extensions
 {
+    /// <summary>
+    /// Extension to add IsUnique to mapping properties.
+    /// </summary>
     public static class MappingExtensions
     {
         public static PrimitivePropertyConfiguration IsUnique(this PrimitivePropertyConfiguration configuration)
