@@ -21,7 +21,8 @@ namespace WeHelpDB.Mapping.Classes
             });
             HasRequired(p => p.Event).WithMany(p => p.Participants).HasForeignKey(p => p.EventId).WillCascadeOnDelete();
             HasRequired(p => p.User).WithMany(p => p.ParticipateEvents).HasForeignKey(p => p.UserId).WillCascadeOnDelete(false);
-
+            Property(p => p.CreatedAt).IsRequired();
+            Property(p => p.UpdatedAt).IsRequired();
         }
     }
 }

@@ -59,6 +59,7 @@
     <Compile Include="Entities\EventUser.cs" />
     <Compile Include="Entities\Ong.cs" />
     <Compile Include="Entities\Person.cs" />
+    <Compile Include="Entities\Requirement.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Enums\EventStatus.cs" />
     <Compile Include="Extensions\MappingExtensions.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="Mapping\Classes\EventUserMapping.cs" />
     <Compile Include="Mapping\Classes\OngMapping.cs" />
     <Compile Include="Mapping\Classes\PersonMapping.cs" />
+    <Compile Include="Mapping\Classes\RequirementMapping.cs" />
     <Compile Include="Mapping\Classes\UserMapping.cs" />
     <Compile Include="Mapping\Interfaces\IMapping.cs" />
     <Compile Include="Migrations\201612300112359_Initial.cs" />
@@ -94,11 +96,16 @@
     <Compile Include="Migrations\201701060021033_EventUserRelationship.Designer.cs">
       <DependentUpon>201701060021033_EventUserRelationship.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701060209507_RequirementTable.cs" />
+    <Compile Include="Migrations\201701060209507_RequirementTable.Designer.cs">
+      <DependentUpon>201701060209507_RequirementTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Abstract\Repository.cs" />
     <Compile Include="Repositories\Classes\CategoryRepository.cs" />
     <Compile Include="Repositories\Classes\EventRepository.cs" />
+    <Compile Include="Repositories\Classes\RequirementRepository.cs" />
     <Compile Include="Repositories\Classes\UserRepository.cs" />
     <Compile Include="Repositories\Interfaces\IRepository.cs" />
     <Compile Include="UnitOfWork\UnitOfWork.cs" />
@@ -125,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701060021033_EventUserRelationship.resx">
       <DependentUpon>201701060021033_EventUserRelationship.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701060209507_RequirementTable.resx">
+      <DependentUpon>201701060209507_RequirementTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -23,6 +23,7 @@ namespace WeHelpDB.Mapping.Classes
             Property(p => p.EventStatus).IsRequired().IsFixedLength().HasMaxLength(1);
             Property(p => p.CreatedAt).IsRequired();
             Property(p => p.UpdatedAt).IsRequired();
+            HasMany(p => p.Requirements).WithRequired(p => p.Event).HasForeignKey(p => p.EventoId);
         }
     }
 }
