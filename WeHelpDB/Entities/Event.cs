@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace WeHelpDB.Entities
 {
@@ -8,6 +9,7 @@ namespace WeHelpDB.Entities
         public Event()
         {
             Address = new Address();
+            Participants = new HashSet<EventUser>();
         }
         #endregion
 
@@ -26,8 +28,9 @@ namespace WeHelpDB.Entities
         #endregion
 
         #region Relationships
-        public Category Category { get; set; }
-        public User User { get; set; }
+        public virtual Category Category { get; set; }
+        public virtual User User { get; set; }
+        public virtual ICollection<EventUser> Participants { get; set; }
         #endregion
     }
 }

@@ -9,6 +9,7 @@ namespace WeHelpDB.Entities
         public User()
         {
             CreatedEvents = new HashSet<Event>();
+            ParticipateEvents = new HashSet<EventUser>();
         }
         #endregion
 
@@ -24,6 +25,7 @@ namespace WeHelpDB.Entities
         public virtual Person Person { get; set; }
         public virtual Ong Ong { get; set; }
         public virtual ICollection<Event> CreatedEvents { get; set; }
+        public virtual ICollection<EventUser> ParticipateEvents { get; set; }
         #endregion
     }
 }

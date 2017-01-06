@@ -56,6 +56,7 @@
     <Compile Include="Entities\Address.cs" />
     <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\Event.cs" />
+    <Compile Include="Entities\EventUser.cs" />
     <Compile Include="Entities\Ong.cs" />
     <Compile Include="Entities\Person.cs" />
     <Compile Include="Entities\User.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="Mapping\Classes\AddressMapping.cs" />
     <Compile Include="Mapping\Classes\CategoryMapping.cs" />
     <Compile Include="Mapping\Classes\EventMapping.cs" />
+    <Compile Include="Mapping\Classes\EventUserMapping.cs" />
     <Compile Include="Mapping\Classes\OngMapping.cs" />
     <Compile Include="Mapping\Classes\PersonMapping.cs" />
     <Compile Include="Mapping\Classes\UserMapping.cs" />
@@ -87,6 +89,10 @@
     <Compile Include="Migrations\201612310702066_StatusEventFix.cs" />
     <Compile Include="Migrations\201612310702066_StatusEventFix.Designer.cs">
       <DependentUpon>201612310702066_StatusEventFix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701060021033_EventUserRelationship.cs" />
+    <Compile Include="Migrations\201701060021033_EventUserRelationship.Designer.cs">
+      <DependentUpon>201701060021033_EventUserRelationship.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -116,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612310702066_StatusEventFix.resx">
       <DependentUpon>201612310702066_StatusEventFix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701060021033_EventUserRelationship.resx">
+      <DependentUpon>201701060021033_EventUserRelationship.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
