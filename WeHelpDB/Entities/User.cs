@@ -11,6 +11,7 @@ namespace WeHelpDB.Entities
             CreatedEvents = new HashSet<Event>();
             ParticipateEvents = new HashSet<EventUser>();
             Requirements = new HashSet<RequirementUser>();
+            Comments = new HashSet<Comment>();
         }
         #endregion
 
@@ -28,6 +29,7 @@ namespace WeHelpDB.Entities
         public virtual ICollection<Event> CreatedEvents { get; set; }
         public virtual ICollection<EventUser> ParticipateEvents { get; set; }
         public virtual ICollection<RequirementUser> Requirements { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
         #endregion
     }
 }

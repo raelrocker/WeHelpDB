@@ -16,6 +16,8 @@ namespace WeHelpDB.UnitOfWork
         private CategoryRepository categoryRepository;
         private EventRepository eventRepository;
         private RequirementRepository requirementRepository;
+        private CommentRepository commentRepository;
+
         #endregion
 
         #region Repositories
@@ -63,6 +65,18 @@ namespace WeHelpDB.UnitOfWork
                     requirementRepository = new RequirementRepository(this.weHelpContext);
                 }
                 return requirementRepository;
+            }
+        }
+
+        public CommentRepository CommentRepository
+        {
+            get
+            {
+                if (commentRepository == null)
+                {
+                    commentRepository = new CommentRepository(this.weHelpContext);
+                }
+                return commentRepository;
             }
         }
         #endregion

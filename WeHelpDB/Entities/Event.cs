@@ -11,6 +11,7 @@ namespace WeHelpDB.Entities
             Address = new Address();
             Participants = new HashSet<EventUser>();
             Requirements = new HashSet<Requirement>();
+            Comments = new HashSet<Comment>();
         }
         #endregion
 
@@ -33,6 +34,7 @@ namespace WeHelpDB.Entities
         public virtual User User { get; set; }
         public virtual ICollection<EventUser> Participants { get; set; }
         public virtual ICollection<Requirement> Requirements { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
         #endregion
     }
 }
