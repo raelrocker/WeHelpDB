@@ -6,19 +6,16 @@ using System.Threading.Tasks;
 
 namespace WeHelpDB.Entities
 {
-    public class Requirement
+    public class RequirementUser
     {
-        #region Constrcutor
-        public Requirement()
-        {
-            UserRequirements = new HashSet<RequirementUser>();
-        }
+        #region Constructor
+        public RequirementUser()
+        { }
         #endregion
 
         #region Properties
         public int RequirementId { get; set; }
-        public int EventoId { get; set; }
-        public string Description { get; set; }
+        public int UserId { get; set; }
         public decimal Quant { get; set; }
         public string Unity { get; set; }
         public DateTime CreatedAt { get; set; }
@@ -26,8 +23,8 @@ namespace WeHelpDB.Entities
         #endregion
 
         #region Relationships
-        public virtual Event Event { get; set; }
-        public virtual ICollection<RequirementUser> UserRequirements { get; set; }
+        public virtual Requirement Requirement { get; set; }
+        public virtual User User { get; set; }
         #endregion
     }
 }

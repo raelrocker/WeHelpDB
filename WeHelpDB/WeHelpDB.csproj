@@ -60,6 +60,7 @@
     <Compile Include="Entities\Ong.cs" />
     <Compile Include="Entities\Person.cs" />
     <Compile Include="Entities\Requirement.cs" />
+    <Compile Include="Entities\RequirementUser.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Enums\EventStatus.cs" />
     <Compile Include="Extensions\MappingExtensions.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="Mapping\Classes\OngMapping.cs" />
     <Compile Include="Mapping\Classes\PersonMapping.cs" />
     <Compile Include="Mapping\Classes\RequirementMapping.cs" />
+    <Compile Include="Mapping\Classes\RequirementUserMapping.cs" />
     <Compile Include="Mapping\Classes\UserMapping.cs" />
     <Compile Include="Mapping\Interfaces\IMapping.cs" />
     <Compile Include="Migrations\201612300112359_Initial.cs" />
@@ -99,6 +101,10 @@
     <Compile Include="Migrations\201701060209507_RequirementTable.cs" />
     <Compile Include="Migrations\201701060209507_RequirementTable.Designer.cs">
       <DependentUpon>201701060209507_RequirementTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701072044094_RequirementUser.cs" />
+    <Compile Include="Migrations\201701072044094_RequirementUser.Designer.cs">
+      <DependentUpon>201701072044094_RequirementUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -135,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701060209507_RequirementTable.resx">
       <DependentUpon>201701060209507_RequirementTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701072044094_RequirementUser.resx">
+      <DependentUpon>201701072044094_RequirementUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
